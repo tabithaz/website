@@ -453,15 +453,6 @@ footer{background:#18305a;color:#dceaff;border-top:1px solid #5471a4}
 footer a:hover{color:white}
 @media(max-width:600px){#work .project-card{padding:11px 0;background:none}}
 
-.hero h1 .sky-icon{display:inline-grid;place-items:center;width:1.52em;height:1.52em;margin-left:.17em;vertical-align:.28em;border:1px solid #fff9;border-radius:50%;background:#f5fbffb8;font:400 .27em/1 system-ui,sans-serif;letter-spacing:0;box-shadow:0 2px 7px #183d5f22}
-.hero h1 .sky-icon>span{display:none}
-.hero:not([data-sky]) .sky-icon .sky-default,
-.hero[data-sky=clear] .sky-icon .sky-clear,
-.hero[data-sky=overcast] .sky-icon .sky-overcast,
-.hero[data-sky=rain]:not(.has-rainbow) .sky-icon .sky-rain,
-.hero[data-sky=snow] .sky-icon .sky-snow,
-.hero[data-sky=night] .sky-icon .sky-night,
-.hero[data-sky=rain].has-rainbow .sky-icon .sky-rainbow{display:block}
 
 .postcard-stamp{position:absolute;z-index:1;top:clamp(13px,2.6vw,26px);right:clamp(13px,2.6vw,26px);display:grid;place-items:center;width:clamp(86px,14vw,126px);min-height:clamp(47px,7vw,63px);padding:8px;text-align:center;border:2px solid #161616e8;border-radius:48% 52% 47% 53% / 56% 49% 51% 44%;background:#fbf9f0aa;color:#151515;font:750 clamp(.53rem,.89vw,.67rem)/1.12 var(--mono);letter-spacing:.07em;transform:rotate(-9deg);pointer-events:none}
 .postcard-stamp::before{content:"";position:absolute;inset:3px;border:1px solid #252525b9;border-radius:50%;pointer-events:none}
@@ -672,7 +663,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
 <div class="shell"><section class="hero" aria-labelledby="name">
 <div>
 <p class="kicker">Software &amp; data engineering</p>
-<h1 id="name"><button class="name-rainbow" type="button" aria-pressed="false" title="Show or hide the rainbow">Tabitha <span class="sky-icon" aria-hidden="true"><span class="sky-default">⛅</span><span class="sky-clear">☀️</span><span class="sky-overcast">☁️</span><span class="sky-rain">🌧️</span><span class="sky-snow">❄️</span><span class="sky-night">🌙</span><span class="sky-rainbow">🌈</span></span> <span>Zachariah</span></button></h1>
+<h1 id="name"><button class="name-rainbow" type="button" aria-pressed="false" title="Show or hide the rainbow">Tabitha <span>Zachariah</span></button></h1>
 </div>
 <div class="hero-details"><p class="intro">Hi! I’m Tabitha! I’m a senior at Purdue and I’m from California. I really like to bake and run. In 2027, I want to run five marathons, starting with Yellowstone.</p><div class="weather-controls">
   <div class="weather-options"><button id="match-sky" type="button" title="Use an approximate location to match the weather">Match my sky</button><button id="reset-sky" type="button" hidden>Back to blue sky</button></div>
