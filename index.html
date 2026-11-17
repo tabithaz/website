@@ -10,13 +10,13 @@
   color-scheme:dark;
   --paper:#131715;--panel:#191e1b;--panel-raised:#202622;--ink:#f4f0e5;
   --muted:#c0c7bc;--line:#424a40;--signal:#ff915c;--signal-ink:#25130c;
-  --mono:"IBM Plex Mono",ui-monospace,monospace;--display:"Space Grotesk",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,monospace;--display:Georgia,"Times New Roman",serif;--body:"Source Sans 3",system-ui,sans-serif;
   --inset:max(22px,calc((100% - 1168px)/2));
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 [hidden]{display:none!important}
-body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.55 "DM Sans",system-ui,sans-serif}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.55 var(--body)}
 a{color:inherit;text-underline-offset:.22em}
 button,input{font:inherit}
 button{color:inherit}
@@ -25,14 +25,14 @@ a:hover{color:var(--signal)}
 img,iframe{max-width:100%}
 h1,h2,h3,h4,p,figure{margin:0}
 h1,h2,h3,h4{font-family:var(--display);line-height:1.04}
-h2{font-size:clamp(2.2rem,5vw,4.5rem);letter-spacing:-.065em;margin-bottom:25px}
+h2{font-size:clamp(2.2rem,5vw,4.5rem);letter-spacing:-.04em;margin-bottom:25px}
 h3{font-size:clamp(1.25rem,2.5vw,1.8rem);letter-spacing:-.035em}
 header{padding-inline:var(--inset);background:#101310;border-bottom:1px solid var(--line)}
 header .shell,.footer-row,nav,.actions,.field-actions,.field-heading{display:flex;align-items:center;flex-wrap:wrap;gap:18px}
 header .shell,.footer-row,.field-heading{justify-content:space-between}
 header .shell{min-height:70px;padding-block:10px}
 nav{gap:clamp(12px,2.5vw,26px)}
-nav a,.brand{text-decoration:none;font:500 .8rem/1.2 var(--mono)}
+nav a,.brand{text-decoration:none;font:600 .9rem/1.2 var(--body)}
 .brand{display:flex;align-items:center;gap:10px}
 .logo{display:grid;place-items:center;width:34px;height:34px;background:var(--signal);color:var(--signal-ink);font-weight:700}
 .skip{position:absolute;z-index:5;left:14px;top:-100px;background:var(--signal);color:var(--signal-ink);padding:10px}
@@ -49,7 +49,7 @@ nav a,.brand{text-decoration:none;font:500 .8rem/1.2 var(--mono)}
 .hero-details{grid-area:details}
 .kicker,.date,.caption,.plate-caption small,.spread small{font:.76rem/1.55 var(--mono)}
 .kicker{color:var(--signal);text-transform:uppercase;letter-spacing:.12em;margin-bottom:17px}
-.hero h1{font-size:clamp(4rem,8.6vw,8.4rem);line-height:.85;letter-spacing:-.095em}
+.hero h1{font-size:clamp(4rem,8.6vw,8.4rem);line-height:.85;letter-spacing:-.045em}
 .hero h1 span{display:block;color:var(--signal)}
 .hero .intro{color:var(--muted);max-width:44ch;font-size:1.05rem}
 .actions,.field-actions{margin-top:17px}
@@ -208,7 +208,7 @@ header{background:#eaf5ff;border-color:#bdd5eb}
 .hero>div:first-child:before,.hero-details:before{content:"";position:absolute;inset:-14px -18px;z-index:-1;background:radial-gradient(ellipse at 40% 50%,#f4faff80 40%,transparent 76%);pointer-events:none}
 .hero .kicker,.hero .intro{color:#1f4269}
 .hero h1{font-size:inherit}
-.name-rainbow{border:0;background:none;color:#123760;font:700 clamp(4rem,8.6vw,8.4rem)/.86 var(--display);letter-spacing:-.095em;text-align:left;padding:0;cursor:pointer}
+.name-rainbow{border:0;background:none;color:#123760;font:700 clamp(3.75rem,8.1vw,7.8rem)/.94 var(--display);letter-spacing:-.045em;text-align:left;padding:0;cursor:pointer}
 .hero h1 .name-rainbow span{color:#1258a8}
 .name-rainbow:hover span,.name-rainbow[aria-pressed=true] span{color:#174689;text-shadow:0 2px 0 #f7fcff85}
 .hero-sky-effects{position:absolute;inset:0;pointer-events:none;z-index:1}
@@ -310,7 +310,7 @@ footer{background:#d9eaff;color:#315779}
 .weather-options{display:flex;align-items:center;flex-wrap:wrap;gap:7px}
 .weather-options button,.weather-city button,.weather-results button,.weather-city input{
   border:1px solid #91b6db;background:#f6fbff;color:#134981;border-radius:5px;
-  padding:6px 9px;font:650 .82rem/1.3 "DM Sans",system-ui,sans-serif
+  padding:6px 9px;font:650 .82rem/1.3 var(--body)
 }
 .weather-options button,.weather-city button,.weather-results button{cursor:pointer}
 .weather-options button:hover,.weather-city button:hover,.weather-results button:hover{background:#e2f1ff}
@@ -469,7 +469,7 @@ footer a:hover{color:white}
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&amp;family=Space+Grotesk:wght@400;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=Source+Sans+3:wght@400;500;600;650;700&amp;display=swap" rel="stylesheet">
 <!--
 Copyright 2022 The Instrument Serif Project Authors (https://github.com/Instrument/instrument-serif)
 
