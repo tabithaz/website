@@ -1529,7 +1529,7 @@ function syncRotation() {
   photoRotation.textContent = rotationOn ? 'Pause rotation' : 'Play rotation';
   if (!rotationOn || !carouselVisible || document.hidden) return;
 
-  const delay = holdUntil ? Math.max(0, holdUntil - Date.now()) : 3000;
+  const delay = holdUntil ? Math.max(0, holdUntil - Date.now()) : 2000;
   rotationTimer = setTimeout(() => {
     holdUntil = 0;
     showPhoto(currentPhoto + 1);
