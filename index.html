@@ -472,6 +472,11 @@ body, body *, body *::before, body *::after{
 body{font-size:1.125rem}
 nav a,.brand,.tag,.date,.photo-credits{font-size:.94rem}
 h2,h3,h4{letter-spacing:normal}
+
+/* Interactive project and running keepsakes */
+.telemetry-play{margin:22px 0;padding:22px;border:1px solid #8ca8bf;border-radius:18px;background:linear-gradient(145deg,#eff8f7e8,#dbe9f4e8);color:#243d52}
+.telemetry-play h4{font-size:25px;margin:0 0 8px}.telemetry-play p{font-size:16px;line-height:1.5}.satellite-scene{height:115px;display:flex;align-items:center;justify-content:center;gap:24px}.satellite-scene svg{width:130px;height:95px;transform:rotate(-12deg);color:#426b91}.telemetry-decision{border:1px solid currentColor;border-radius:999px;padding:8px 14px;font-size:23px;font-weight:bold}.telemetry-play[data-state="GO"] .telemetry-decision{color:#286346}.telemetry-play[data-state="MONITOR"] .telemetry-decision{color:#875914}.telemetry-play[data-state="HOLD"] .telemetry-decision{color:#9c394b}.telemetry-control{display:block;margin:13px 0}.telemetry-control>span{display:flex;justify-content:space-between;gap:12px}.telemetry-control input{width:100%;accent-color:#426b91;min-height:28px}.telemetry-play button{border:1px solid #819caf;border-radius:8px;padding:8px 12px;background:#f8fbff;color:#243d52}.telemetry-note{font-size:14px!important;opacity:.8}.telemetry-reason{min-height:48px}.race-keepsake{margin:28px 0;padding:24px;border:1px solid #c7c4d5;border-radius:18px;background:#f4f0e9;color:#37425a;max-width:620px}.race-keepsake h3{margin:0 0 8px;font-size:30px}.bib-space{position:relative;min-height:215px;display:grid;place-items:center;overflow:hidden}.race-bib{position:relative;width:210px;padding:15px 18px;background:#fffdf5;border:1px solid #c6bfae;box-shadow:3px 8px 17px #35476226;transform:translate(var(--bib-x,0px),var(--bib-y,0px)) rotate(-5deg);cursor:grab;touch-action:none;color:#354762;border-radius:3px;user-select:none}.race-bib:active{cursor:grabbing}.race-bib:focus-visible{outline:3px solid #426b91;outline-offset:5px}.race-bib:before,.race-bib:after{content:"";position:absolute;top:9px;width:6px;height:6px;border:1px solid #a6a39b;border-radius:50%;background:#e9e4d8}.race-bib:before{left:9px}.race-bib:after{right:9px}.race-bib small,.race-bib strong,.race-bib span{display:block;text-align:center}.race-bib strong{font-size:65px;line-height:1.2}.race-bib span{border-top:1px dashed #c6bfae;padding-top:8px;font-size:17px}.race-plan{border-top:1px dashed #c6bfae;padding-top:18px}.race-plan[hidden]{display:none}.race-plan ol{padding-left:25px;line-height:1.8}.race-plan p{font-size:17px;line-height:1.5}.race-keepsake>p{font-size:17px}
+
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -698,7 +703,13 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
 </section><div class="project-wash"><section class="section" id="work">
 <h2>Projects</h2>
 <div class="project-grid">
-<article class="project-card" id="telemetry-project"><h3>TelemetryGuard</h3><p>Built a C++17 CLI that runs 28 diagnostics on flight telemetry and returns a GO, MONITOR, or HOLD decision.</p><details class="guess-pocket">
+<article class="project-card" id="telemetry-project"><h3>TelemetryGuard</h3><p>Built a C++17 CLI that runs 28 diagnostics on flight telemetry and returns a GO, MONITOR, or HOLD decision.</p><div class="telemetry-play" id="telemetry-check" data-state="GO">
+<h4>Would you give it a GO?</h4><p>Move a reading and watch the satellite’s readiness change.</p>
+<div class="satellite-scene"><svg viewBox="0 0 160 110" aria-hidden="true"><g fill="#a8c8dc" stroke="currentColor" stroke-width="2"><path d="M9 39h40v36H9zM111 39h40v36h-40z"/><path d="M22 39v36m13-36v36m-26-18h40m75-18v36m13-36v36m-26-18h40"/><rect x="59" y="30" width="42" height="53" rx="8" fill="#f7e9c8"/><path d="M49 57h10m42 0h10M80 30V16m-9 0h18M80 83v13"/><circle cx="80" cy="55" r="9" fill="#799eb4"/></g></svg><strong class="telemetry-decision" id="telemetry-decision">GO</strong></div>
+<label class="telemetry-control" for="demo-temperature"><span>Temperature <output id="temperature-value" for="demo-temperature">45 °C</output></span><input id="demo-temperature" type="range" min="0" max="120" value="45" step="1"><small>MONITOR above 80 °C · HOLD above 100 °C</small></label>
+<label class="telemetry-control" for="demo-battery"><span>Battery <output id="battery-value" for="demo-battery">85%</output></span><input id="demo-battery" type="range" min="0" max="100" value="85" step="1"><small>MONITOR below 30% · HOLD below 15%</small></label>
+<label class="telemetry-control" for="demo-signal"><span>Signal strength <output id="signal-value" for="demo-signal">90%</output></span><input id="demo-signal" type="range" min="0" max="100" value="90" step="1"><small>MONITOR below 50% · HOLD below 20%</small></label>
+<p class="telemetry-reason" id="telemetry-reason" role="status" aria-live="polite">GO — All three readings are within the demo limits.</p><button id="telemetry-reset" type="button">Reset readings</button><p class="telemetry-note">A simplified interactive illustration inspired by TelemetryGuard. The C++ project runs 28 diagnostics; this demo uses three sample rules.</p></div><details class="guess-pocket">
 <summary>First Guess <span aria-hidden="true">↘</span></summary>
 <form class="guess-slip" data-correct="1">
 <fieldset><legend>Which reading grounded the sample flight?</legend><label class="guess-choice"><input type="radio" name="guess-flight" value="0"><span>Temperature · 91.5 °C</span></label><label class="guess-choice"><input type="radio" name="guess-flight" value="1"><span>Fuel level · missing</span></label></fieldset>
@@ -1310,7 +1321,7 @@ Fuel Level,61,0,100,-1,101,%,0.8,4,5</pre><iframe title="TelemetryGuard storm fl
   <div><h3><a href="https://www.redcross.org/">The Red Cross</a></h3><p>Intern</p></div>
   <p class="date">2022 - 2023</p>
 </article>
-<div class="skills"><h3 id="skills">Skills</h3><div class="skill-group"><h4>Languages</h4><ul class="tags"><li class="tag">Java</li><li class="tag">Python</li><li class="tag">SQL</li><li class="tag">C</li><li class="tag">C++</li><li class="tag">JavaScript</li><li class="tag">TypeScript</li><li class="tag">Bash</li></ul></div><div class="skill-group"><h4>Data &amp; databases</h4><ul class="tags"><li class="tag">Snowflake</li><li class="tag">dbt</li><li class="tag">Apache Spark</li><li class="tag">PySpark</li><li class="tag">Databricks</li><li class="tag">Apache Kafka</li><li class="tag">PostgreSQL</li><li class="tag">MySQL</li><li class="tag">Cassandra</li><li class="tag">pandas</li><li class="tag">NumPy</li></ul></div><div class="skill-group"><h4>Backend &amp; infrastructure</h4><ul class="tags"><li class="tag">FastAPI</li><li class="tag">Spring Boot</li><li class="tag">Docker</li><li class="tag">Kubernetes</li><li class="tag">AWS</li><li class="tag">Linux</li><li class="tag">GitHub Actions</li><li class="tag">CMake</li><li class="tag">OpenDDS</li></ul></div><div class="skill-group"><h4>Observability &amp; analytics</h4><ul class="tags"><li class="tag">Prometheus</li><li class="tag">Grafana</li><li class="tag">Tableau</li><li class="tag">Power BI</li><li class="tag">scikit-learn</li><li class="tag">TensorFlow</li><li class="tag">PyTorch</li></ul></div></div></section><section class="section" id="about">
+<div class="skills"><h3 id="skills">Skills</h3><div class="skill-group"><h4>Languages</h4><ul class="tags"><li class="tag">Java</li><li class="tag">Python</li><li class="tag">SQL</li><li class="tag">C</li><li class="tag">C++</li><li class="tag">JavaScript</li><li class="tag">TypeScript</li><li class="tag">Bash</li></ul></div><div class="skill-group"><h4>Data &amp; databases</h4><ul class="tags"><li class="tag">Snowflake</li><li class="tag">dbt</li><li class="tag">Apache Spark</li><li class="tag">PySpark</li><li class="tag">Databricks</li><li class="tag">Apache Kafka</li><li class="tag">PostgreSQL</li><li class="tag">MySQL</li><li class="tag">Cassandra</li><li class="tag">pandas</li><li class="tag">NumPy</li></ul></div><div class="skill-group"><h4>Backend &amp; infrastructure</h4><ul class="tags"><li class="tag">FastAPI</li><li class="tag">Spring Boot</li><li class="tag">Docker</li><li class="tag">Kubernetes</li><li class="tag">AWS</li><li class="tag">Linux</li><li class="tag">GitHub Actions</li><li class="tag">CMake</li><li class="tag">OpenDDS</li></ul></div><div class="skill-group"><h4>Observability &amp; analytics</h4><ul class="tags"><li class="tag">Prometheus</li><li class="tag">Grafana</li><li class="tag">Tableau</li><li class="tag">Power BI</li><li class="tag">scikit-learn</li><li class="tag">TensorFlow</li><li class="tag">PyTorch</li></ul></div></div></section><section class="section" id="about"><div class="race-keepsake" id="marathon-goal"><h3>Five finish lines, one year.</h3><p>My 2027 goal. Drag the bib around, or tap it to peek at the plan.</p><div class="bib-space"><button class="race-bib" id="race-bib" type="button" aria-expanded="false" aria-controls="race-plan"><small>TABITHA · FIVE MARATHONS</small><strong>2027</strong><span>26.2 miles at a time</span></button></div><div class="race-plan" id="race-plan" hidden><p><strong>The goal: five marathons in 2027.</strong> Starting with Yellowstone.</p><ol><li>Yellowstone — planned first race</li><li>Race two — to be decided</li><li>Race three — to be decided</li><li>Race four — to be decided</li><li>Race five — to be decided</li></ol><p>Current chapter: planning the starting lines. Finish times and completed races will go here as they happen.</p></div></div>
 <h2>Purdue to California</h2><section class="photo-carousel" id="landscape" aria-label="Purdue and California photo carousel">
   <div class="film-tool"><button type="button" id="photo-rotation">Pause rotation</button></div>
   <div class="film-layout"><div class="film-reel"><div class="film-viewport"><figure class="photo-slide photo-purdue" aria-label="1 of 22" data-current>
@@ -2395,5 +2406,30 @@ document.getElementById(&quot;import&quot;).addEventListener(&quot;change&quot;,
   event.target.value=&quot;&quot;;
 });
 init();
-&lt;/script&gt;&lt;/body&gt;&lt;/html&gt;"></iframe></template></body>
+&lt;/script&gt;&lt;/body&gt;&lt;/html&gt;"></iframe></template>
+<script>
+(() => {
+ const panel=document.getElementById('telemetry-check');
+ const temperature=document.getElementById('demo-temperature'), battery=document.getElementById('demo-battery'), signal=document.getElementById('demo-signal');
+ function updateTelemetry(){
+  const t=Number(temperature.value), b=Number(battery.value), s=Number(signal.value);
+  document.getElementById('temperature-value').textContent=t+' °C';document.getElementById('battery-value').textContent=b+'%';document.getElementById('signal-value').textContent=s+'%';
+  const critical=[], warnings=[];
+  if(t>100) critical.push('temperature exceeds 100 °C');else if(t>80) warnings.push('temperature exceeds 80 °C');
+  if(b<15) critical.push('battery is below 15%');else if(b<30) warnings.push('battery is below 30%');
+  if(s<20) critical.push('signal strength is below 20%');else if(s<50) warnings.push('signal strength is below 50%');
+  const state=critical.length?'HOLD':warnings.length?'MONITOR':'GO';panel.dataset.state=state;document.getElementById('telemetry-decision').textContent=state;
+  document.getElementById('telemetry-reason').textContent=state+' — '+(critical.length?'Blocking: '+critical.join('; ')+'.'+(warnings.length?' Also watch: '+warnings.join('; ')+'.':''):warnings.length?'Watch: '+warnings.join('; ')+'.':'All three readings are within the demo limits.');
+ }
+ [temperature,battery,signal].forEach(input=>input.addEventListener('input',updateTelemetry));
+ document.getElementById('telemetry-reset').addEventListener('click',()=>{temperature.value=45;battery.value=85;signal.value=90;updateTelemetry();});updateTelemetry();
+ const bib=document.getElementById('race-bib'), plan=document.getElementById('race-plan');let drag=null,x=0,y=0,suppressClick=false;
+ bib.addEventListener('pointerdown',event=>{if(event.button!==0)return;drag={id:event.pointerId,startX:event.clientX,startY:event.clientY,x,y,moved:false};bib.setPointerCapture(event.pointerId);suppressClick=false;});
+ bib.addEventListener('pointermove',event=>{if(!drag||event.pointerId!==drag.id)return;const dx=event.clientX-drag.startX,dy=event.clientY-drag.startY;if(Math.hypot(dx,dy)>6)drag.moved=true;if(!drag.moved)return;const bounds=bib.parentElement.getBoundingClientRect();const maxX=Math.max(0,(bounds.width-bib.offsetWidth)/2-12),maxY=Math.max(0,(bounds.height-bib.offsetHeight)/2-12);x=Math.max(-maxX,Math.min(maxX,drag.x+dx));y=Math.max(-maxY,Math.min(maxY,drag.y+dy));bib.style.setProperty('--bib-x',x+'px');bib.style.setProperty('--bib-y',y+'px');});
+ bib.addEventListener('pointerup',()=>{suppressClick=!!drag?.moved;drag=null;});bib.addEventListener('pointercancel',()=>{drag=null;suppressClick=true;});bib.addEventListener('lostpointercapture',()=>{drag=null;});
+ bib.addEventListener('click',event=>{if(suppressClick&&event.detail!==0){suppressClick=false;return;}plan.hidden=!plan.hidden;bib.setAttribute('aria-expanded',String(!plan.hidden));});
+ window.addEventListener('resize',()=>{x=0;y=0;bib.style.setProperty('--bib-x','0px');bib.style.setProperty('--bib-y','0px');});
+})();
+</script>
+</body>
 </html>
